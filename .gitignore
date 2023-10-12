@@ -1,0 +1,5 @@
+cmake_build
+build
+resolve_symlinks
+.waf**
+coverage

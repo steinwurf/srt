@@ -1,9 +1,0 @@
-#! /usr/bin/env python
-# encoding: utf-8
-
-bld.program(
-    features="cxx",
-    source=["hello_asio.cpp"],
-    target="hello_asio",
-    use=["asio_includes"],
-)
