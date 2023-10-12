@@ -1,0 +1,45 @@
+wurf: Resolve execute resolve
+----------------------------------------
+Using config file
+/home/suhrm/.wurf_config
+----------------------------------------
+Default resolve path
+/home/suhrm/projects/dependencies
+['git', 'config', '--get', 'remote.origin.url']
+out: git@github.com:steinwurf/srt.git
+
+----------------------------------------
+Resolve "waf-tools" (git semver)
+Tags downloaded. File size: 39074
+
+Registered tags for waf-tools:
+['1.0.0', '1.0.1', '1.0.2', '1.0.3', '1.0.4', '1.0.5', '1.0.6', '1.1.0', '1.2.0', '1.2.1', '1.3.0', '1.3.1', '1.4.0', '1.5.0', '1.5.1', '2.0.0', '2.1.0', '2.1.1', '2.2.0', '2.3.0', '2.4.0', '2.5.0', '2.6.0', '2.7.0', '2.8.0', '2.9.0', '2.10.0', '2.10.1', '2.11.0', '2.12.0', '2.13.0', '2.14.0', '2.15.0', '2.16.0', '2.16.1', '2.16.2', '2.17.0', '2.17.1', '2.18.0', '2.19.0', '2.19.1', '2.20.0', '2.21.0', '2.22.0', '2.23.0', '2.24.0', '2.25.0', '2.26.0', '2.27.0', '2.28.0', '2.29.0', '2.30.0', '2.31.0', '2.32.0', '2.32.1', '2.33.0', '2.33.1', '2.33.2', '2.34.0', '2.35.0', '2.36.0', '2.36.1', '2.37.0', '2.38.0', '2.39.0', '2.40.0', '2.40.1', '2.40.2', '2.41.0', '2.42.0', '2.43.0', '2.44.0', '2.45.0', '2.46.0', '2.47.0', '2.48.0', '2.49.0', '2.50.0', '2.51.0', '2.52.0', '2.53.0', '2.53.1', '2.54.0', '3.0.0', '3.0.1', '3.0.2', '3.1.0', '3.1.1', '3.1.2', '3.1.3', '3.2.0', '3.3.0', '3.4.0', '3.4.1', '3.5.0', '3.5.1', '3.6.0', '3.6.1', '3.7.0', '3.8.0', '3.8.1', '3.9.0', '3.10.0', '3.10.1', '3.11.0', '3.12.0', '3.12.1', '3.13.0', '3.14.0', '3.14.1', '3.15.0', '3.16.0', '3.17.0', '3.17.1', '3.17.2', '3.18.0', '3.19.0', '3.19.1', '4.0.0', '4.0.1', '4.0.2', '4.0.3', '4.0.4', '4.1.0', '4.1.1', '4.2.0', '4.3.0', '4.4.0', '4.5.0', '4.5.1', '4.6.0', '4.7.0', '4.8.0', '4.9.0', '4.9.1', '4.10.0', '4.11.0', '4.12.0', '4.13.0', '4.13.1', '4.13.2', '4.14.0', '4.15.0', '4.15.1', '4.16.0', '4.17.0', '4.17.1', '4.18.0', '4.19.0', '4.20.0', '4.20.1', '4.21.0', '4.21.1', '4.22.0', '4.23.0', '4.24.0', '4.25.0', '4.25.1', '4.26.0', '4.27.0', '4.28.0', '4.29.0', '4.30.0', '4.31.0', '4.32.0', '4.33.0', '4.34.0', '4.35.0', '4.36.0', '4.37.0', '4.38.0', '4.39.0', '4.40.0', '4.41.0', '4.42.0', '4.43.0', '4.44.0', '5.0.0', '5.1.0', '5.2.0', '5.2.1', '5.2.2']
+resolve: ExistingTagResolver name waf-tools -> /home/suhrm/projects/dependencies/waf-tools-ae40a5/5.2.2-083931
+wurf: CreateSymlinkResolver /home/suhrm/projects/srt/resolve_symlinks/waf-tools -> /home/suhrm/projects/dependencies/waf-tools-ae40a5/5.2.2-083931
+resolve_symlinks/waf-tools => /home/suhrm/projects/dependencies/waf-tools-ae40a5/5.2.2-083931
+----------------------------------------
+Resolve "srt-source" (git checkout)
+resolve: ExistingCheckoutResolver srt-source no stored checkout for commit v1.5.3
+['git', 'pull']
+out: Already up to date.
+
+['git', 'rev-parse', 'HEAD']
+out: f477af533562505abf5295f059cf2156b17be740
+
+['git', 'branch']
+out: * master
+
+['git', 'rev-parse', 'HEAD']
+out: f477af533562505abf5295f059cf2156b17be740
+
+wurf: GitCheckoutResolver name srt-source -> /home/suhrm/projects/dependencies/srt-source-0a3e99/v1.5.3-11b37e
+['git', 'branch']
+out: * (HEAD detached at v1.5.3)
+  master
+
+['git', 'rev-parse', 'HEAD']
+out: 09f35c0f1743e23f514cb41444504a7faeacf89e
+
+wurf: CreateSymlinkResolver /home/suhrm/projects/srt/resolve_symlinks/srt-source -> /home/suhrm/projects/dependencies/srt-source-0a3e99/v1.5.3-11b37e
+resolve_symlinks/srt-source => /home/suhrm/projects/dependencies/srt-source-0a3e99/v1.5.3-11b37e
+wurf: dependency_cache OrderedDict([('waf-tools', {'path': '/home/suhrm/projects/srt/resolve_symlinks/waf-tools', 'recurse': True}), ('srt-source', {'path': '/home/suhrm/projects/srt/resolve_symlinks/srt-source', 'recurse': True})])

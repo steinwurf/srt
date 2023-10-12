@@ -1,0 +1,69 @@
+wurf: Resolve execute help
+----------------------------------------
+Using config file
+/home/suhrm/.wurf_config
+----------------------------------------
+Default resolve path
+/home/suhrm/projects/dependencies
+----------------------------------------
+Load "waf-tools" (help)
+Resolve failed in <waflib.extras.wurf.on_passive_load_path_resolver.OnPassiveLoadPathResolver object at 0x7f3b8cfde950>:
+Traceback (most recent call last):
+  File "/home/suhrm/projects/asio/.waf3-2.0.22-e6b44ba14c1947e7b6e49f0d693672c2/waflib/extras/wurf/try_resolver.py", line 14, in resolve
+    path=self.resolver.resolve()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suhrm/projects/asio/.waf3-2.0.22-e6b44ba14c1947e7b6e49f0d693672c2/waflib/extras/wurf/on_passive_load_path_resolver.py", line 13, in resolve
+    config=self.__read_config()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/suhrm/projects/asio/.waf3-2.0.22-e6b44ba14c1947e7b6e49f0d693672c2/waflib/extras/wurf/on_passive_load_path_resolver.py", line 26, in __read_config
+    raise DependencyError("No config - re-run configure",self.dependency)
+waflib.extras.wurf.error.DependencyError: No config - re-run configure
+ERROR: the "waf-tools" dependency is not available.
+Please check that you have a valid Steinwurf license and you can access the repository at: <map object at 0x7f3b8d0321a0>
+Dependency info:
+{ 'hash': None,
+  'internal': False,
+  'major': 4,
+  'method': 'semver',
+  'name': 'waf-tools',
+  'optional': False,
+  'override': False,
+  'pull_submodules': True,
+  'recurse': True,
+  'resolver': 'git',
+  'sha1': 'a7a8a39f9b24ed86473e130e17a283ff2616a263',
+  'sources': ['github.com/steinwurf/waf-tools.git']}
+read_write: {'error_messages': [], 'resolver_action': 'help', 'resolver_chain': 'Load'}
+audit: []
+Unavailable
+----------------------------------------
+Load "asio-source" (help)
+Resolve failed in <waflib.extras.wurf.on_passive_load_path_resolver.OnPassiveLoadPathResolver object at 0x7f3b8cfdf090>:
+Traceback (most recent call last):
+  File "/home/suhrm/projects/asio/.waf3-2.0.22-e6b44ba14c1947e7b6e49f0d693672c2/waflib/extras/wurf/try_resolver.py", line 14, in resolve
+    path=self.resolver.resolve()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suhrm/projects/asio/.waf3-2.0.22-e6b44ba14c1947e7b6e49f0d693672c2/waflib/extras/wurf/on_passive_load_path_resolver.py", line 13, in resolve
+    config=self.__read_config()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/suhrm/projects/asio/.waf3-2.0.22-e6b44ba14c1947e7b6e49f0d693672c2/waflib/extras/wurf/on_passive_load_path_resolver.py", line 26, in __read_config
+    raise DependencyError("No config - re-run configure",self.dependency)
+waflib.extras.wurf.error.DependencyError: No config - re-run configure
+ERROR: the "asio-source" dependency is not available.
+Dependency info:
+{ 'checkout': 'asio-1-24-0',
+  'hash': None,
+  'internal': False,
+  'method': 'checkout',
+  'name': 'asio-source',
+  'optional': False,
+  'override': False,
+  'pull_submodules': True,
+  'recurse': True,
+  'resolver': 'git',
+  'sha1': 'e44200f1d9b2c67c43d934d023a2670c4587dd6c',
+  'sources': ['github.com/chriskohlhoff/asio.git']}
+read_write: {'error_messages': [], 'resolver_action': 'help', 'resolver_chain': 'Load'}
+audit: []
+Unavailable
+wurf: dependency_cache OrderedDict()

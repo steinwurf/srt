@@ -1,0 +1,20 @@
+[
+    {
+        "name": "waf-tools",
+        "resolver": "git",
+        "method": "semver",
+        "major": 5,
+        "sources": [
+            "github.com/steinwurf/waf-tools.git"
+        ]
+    },
+    {
+        "name": "srt-source",
+        "resolver": "git",
+        "method": "checkout",
+        "checkout": "v1.5.3",
+        "sources": [
+            "github.com/Haivision/srt.git"
+        ]
+    }
+]
