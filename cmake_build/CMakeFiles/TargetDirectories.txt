@@ -1,0 +1,7 @@
+/home/suhrm/projects/srt/cmake_build/CMakeFiles/srt.dir
+/home/suhrm/projects/srt/cmake_build/CMakeFiles/edit_cache.dir
+/home/suhrm/projects/srt/cmake_build/CMakeFiles/rebuild_cache.dir
+/home/suhrm/projects/srt/cmake_build/CMakeFiles/list_install_components.dir
+/home/suhrm/projects/srt/cmake_build/CMakeFiles/install.dir
+/home/suhrm/projects/srt/cmake_build/CMakeFiles/install/local.dir
+/home/suhrm/projects/srt/cmake_build/CMakeFiles/install/strip.dir

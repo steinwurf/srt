@@ -1,0 +1,194 @@
+[
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/api.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/api.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/api.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/api.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/buffer_rcv.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/buffer_rcv.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/buffer_rcv.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/buffer_rcv.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/buffer_snd.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/buffer_snd.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/buffer_snd.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/buffer_snd.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/buffer_tools.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/buffer_tools.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/buffer_tools.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/buffer_tools.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/cache.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/cache.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/cache.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/cache.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/channel.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/channel.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/channel.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/channel.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/common.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/common.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/common.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/common.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/congctl.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/congctl.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/congctl.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/congctl.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/core.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/core.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/core.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/core.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/crypto.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/crypto.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/crypto.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/crypto.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/epoll.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/epoll.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/epoll.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/epoll.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/fec.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/fec.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/fec.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/fec.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/group.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/group.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/group.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/group.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/group_backup.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/group_backup.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/group_backup.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/group_backup.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/group_common.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/group_common.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/group_common.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/group_common.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/handshake.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/handshake.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/handshake.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/handshake.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/list.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/list.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/list.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/list.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/logger_default.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/logger_default.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/logger_default.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/logger_default.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/logger_defs.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/logger_defs.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/logger_defs.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/logger_defs.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/md5.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/md5.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/md5.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/md5.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/packet.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/packet.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/packet.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/packet.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/packetfilter.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/packetfilter.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/packetfilter.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/packetfilter.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/queue.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/queue.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/queue.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/queue.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/socketconfig.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/socketconfig.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/socketconfig.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/socketconfig.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/srt_c_api.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/srt_c_api.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/srt_c_api.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/srt_c_api.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/cc -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/srt_compat.c.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/srt_compat.c",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/srt_compat.c",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/srt_compat.c.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/strerror_defs.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/strerror_defs.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/strerror_defs.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/strerror_defs.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/sync.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/sync.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/sync.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/sync.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/sync_cxx11.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/sync_cxx11.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/sync_cxx11.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/sync_cxx11.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/sync_posix.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/sync_posix.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/sync_posix.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/sync_posix.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/tsbpd_time.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/tsbpd_time.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/tsbpd_time.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/tsbpd_time.cpp.o"
+},
+{
+  "directory": "/home/suhrm/projects/srt/cmake_build",
+  "command": "/usr/bin/c++ -DENABLE_BONDING=1 -DENABLE_MONOTONIC_CLOCK_DEFAULT=1 -DHAI_ENABLE_SRT=1 -DHAI_PATCH=1 -DHAVE_CXX_STD_PUT_TIME=1 -DLINUX -DSRT_ENABLE_APP_READER -DSRT_ENABLE_BINDTODEVICE -DSRT_ENABLE_CLOSE_SYNCH -DSRT_VERSION=\\\"1.5.3\\\" -D_GNU_SOURCE -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore -I/home/suhrm/projects/srt/resolve_symlinks/srt-source/haicrypt -o CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/window.cpp.o -c /home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/window.cpp",
+  "file": "/home/suhrm/projects/srt/resolve_symlinks/srt-source/srtcore/window.cpp",
+  "output": "CMakeFiles/srt.dir/resolve_symlinks/srt-source/srtcore/window.cpp.o"
+}
+]
