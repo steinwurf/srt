@@ -6,7 +6,7 @@ every change, see the Git log..
 
 Latest
 ------
-* tbd
+* Fixed build path errors
 
 1.0.0
 -----
