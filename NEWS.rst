@@ -6,6 +6,10 @@ every change, see the Git log..
 
 Latest
 ------
+* tbd
+
+1.1.0
+-----
 * Minor: Fixed build path errors
 
 1.0.0
