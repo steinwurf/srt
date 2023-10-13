@@ -4,7 +4,7 @@
 import os
 
 APPNAME = "srt"
-VERSION = "1.5.3"
+VERSION = "1.0.0"
 
 
 def configure(conf):
