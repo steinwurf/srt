@@ -6,7 +6,7 @@ every change, see the Git log..
 
 Latest
 ------
-* Fixed build path errors
+* Minor: Fixed build path errors
 
 1.0.0
 -----
