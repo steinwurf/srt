@@ -3,3 +3,7 @@ build
 resolve_symlinks
 .waf**
 coverage
+install/bin
+install/lib/pkgconfig
+install
+build_current

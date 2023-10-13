@@ -6,6 +6,7 @@ project(SRT VERSION ${SRT_VERSION} LANGUAGES C CXX)
 
 find_package(Python COMPONENTS Interpreter)
 
+
 # Use waf to resolve dependencies
 if(NOT DEFINED STEINWURF_RESOLVE)
   message(STATUS "Resolving dependencies...")
@@ -22,4 +23,8 @@ if(NOT DEFINED STEINWURF_RESOLVE)
   set(STEINWURF_TOP_NAME srt)
 endif()
 
+
+option(ENABLE_SHARED "Build shared library" ON)
+option(ENABLE_APPS "Build apps" OFF)
+option(ENABLE_BONDING "Build bonding" ON)
 add_subdirectory(${STEINWURF_RESOLVE}/srt-source srt)
