@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 3.10)
-set(SRT_VERSION 1.5.3)
-cmake_policy(SET CMP0048 NEW)
-# Also sets SRT_VERSION_MAJOR, SRT_VERSION_MINOR, SRT_VERSION_PATCH
 project(srt)
 
 find_package(Python COMPONENTS Interpreter)
@@ -23,14 +20,66 @@ if(NOT DEFINED STEINWURF_RESOLVE)
   set(STEINWURF_TOP_NAME ${PROJECT_NAME})
 endif()
 
+include(ExternalProject)
+ExternalProject_add(project_srt
+  SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
+  BINARY_DIR ${STEINWURF_RESOLVE}/srt-source/cmake_build
+  INSTALL_DIR ${STEINWURF_RESOLVE}/srt-source/install
+  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/cmake_build
+  BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build
+  CMAKE_ARGS -DENABLED_STATIC=ON -DENABLE_BONDING=ON -DENABLE_APPS=OFF 
+  EXCLUDE_FROM_ALL TRUE
+  STEP_TARGETS build
+  INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install
+  
+)
+add_library(steinwurf::srt STATIC IMPORTED)
+set_property(TARGET steinwurf::srt PROPERTY IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/lib/libsrt.a)
+add_dependencies(steinwurf::srt project_srt)
 
-option(ENABLE_SHARED "Build shared library" ON)
-option(ENABLE_APPS "Build apps" OFF)
-option(ENABLE_BONDING "Build bonding" ON)
-add_subdirectory(${STEINWURF_RESOLVE}/srt-source srt)
-add_library(steinwurf::srt ALIAS ${TARGET_srt}_shared)
-add_library(steinwurf::srt ALIAS ${TARGET_srt}_static)
-target_include_directories(${TARGET_srt}_shared INTERFACE ${STEINWURF_RESOLVE}/srt-source/)
-target_include_directories(${TARGET_srt}_shared INTERFACE ${STEINWURF_RESOLVE}/srt-source/common)
-target_include_directories(${TARGET_srt}_shared INTERFACE ${CMAKE_CURRENT_BINARY_DIR}/srt)
+# Include directories
+target_include_directories(steinwurf::srt INTERFACE ${STEINWURF_RESOLVE}/srt-source/install/include)
 
+# Is top level project?
+if (${PROJECT_NAME} STREQUAL ${STEINWURF_TOP_NAME})
+    enable_testing()
+
+    if (CMAKE_C_COMPILER_ID MATCHES "MSVC")
+        # For Windows: Prevent overriding the parent project's compiler/linker
+        # settings
+        set(gtest_force_shared_crt
+                ON
+                CACHE BOOL "" FORCE)
+    endif ()
+
+    # Google Test dependency
+    add_subdirectory("${STEINWURF_RESOLVE}/gtest-source" gtest_main
+            EXCLUDE_FROM_ALL)
+
+    # Define library
+    file(GLOB_RECURSE srt_test_sources test/**/*.cpp)
+
+    include_directories(${STEINWURF_RESOLVE}/srt-source/install/include)
+
+
+
+    # Build test executable
+    add_executable(srt_tests ${srt_test_sources})
+    add_dependencies(srt_tests project_srt)
+    target_link_libraries(srt_tests steinwurf::srt)
+    target_link_libraries(srt_tests gtest_main)
+
+    # Make sure we compile with C++17 and do not use compiler specific extensions
+    set_property(TARGET srt_tests PROPERTY CXX_STANDARD 17)
+    set_property(TARGET srt_tests PROPERTY CXX_EXTENSIONS OFF)
+
+    # Enable pedantic errors
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+        # GCC is throwing ISO errors from abseil that we can't fix
+    else ()
+        target_compile_options(srt_tests PUBLIC -pedantic-errors)
+    endif ()
+
+    add_test(srt_tests srt_tests)
+
+endif ()
