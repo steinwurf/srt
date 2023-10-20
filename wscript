@@ -26,7 +26,7 @@ def build(bld):
     bld.cmd_and_log(f"mkdir {root_dir}/cmake_build")
     # SRT cmake flags
     flags = " ".join([
-        "-DENABLE_SHARED=ON",
+        "-DENABLE_SHARED=OFF",
         "-DENABLE_STATIC=ON",
         "-DENABLE_APPS=OFF",
         "-DENABLE_ENCRYPTION=OFF",
