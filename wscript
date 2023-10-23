@@ -2,6 +2,8 @@
 # encoding: utf-8
 
 import os
+import shutil
+from waflib import Build, Errors, Logs
 
 APPNAME = "srt"
 VERSION = "1.1.0"
@@ -12,40 +14,16 @@ VERSION = "1.1.0"
 
 
 def build(bld):
-    
-
-    #check if cmake is installed
     # bld.find_program("cmake", mandatory=True)
     root_dir = bld.dependency_node("srt-source")
-    print(root_dir)
     
-
-    #check if cmake_build folder exists
-    if os.path.isdir(f"{root_dir}/cmake_build"):
-        bld.cmd_and_log(f"rm -rf {root_dir}/cmake_build")
-    bld.cmd_and_log(f"mkdir {root_dir}/cmake_build")
-    # SRT cmake flags
-    flags = " ".join([
-        "-DENABLE_SHARED=OFF",
-        "-DENABLE_STATIC=ON",
-        "-DENABLE_APPS=OFF",
-        "-DENABLE_ENCRYPTION=OFF",
-        "-DENABLE_BONDING=ON",
-    ])
-
-    os.system(f"cmake -GNinja {flags} -S {root_dir} -B {root_dir}/cmake_build")
-    os.system(f"cmake --build {root_dir}/cmake_build")
-
-    if not os.path.isdir(f"{root_dir}/install"):
-        os.system(f"mkdir {root_dir}/install")
-    os.system(f"cmake --install {root_dir}/cmake_build --prefix {root_dir}/install")
-
+    target = bld.bldnode.make_node("srt")
+    bld(rule=CMakeBuildTask, target=target.make_node('flag.lock'), source=root_dir)
+    bld.add_group()
+    lib_path = target.find_node("lib")
+    include_path = target.find_node("include")
+    bld.read_stlib('srt', paths=[lib_path], export_includes=[include_path])
     
-    print(f"{root_dir}/install/lib")
-    includes = root_dir.find_node("install/include")
-    libs = root_dir.find_node("install/lib")
-    bld.read_stlib('srt', paths=[libs])
-    bld(name="srt_includes", export_includes=[includes])
     
     if bld.is_toplevel():
         bld.program(
@@ -56,3 +34,30 @@ def build(bld):
             use=["srt", "srt_includes", "gtest"],
         )
 
+def CMakeBuildTask(task):
+    output = task.outputs[0].parent
+    source_dir = task.inputs[0]
+    shutil.rmtree(output.abspath())
+    os.makedirs(output.abspath())
+    #check if cmake_build folder exists
+    if os.path.isdir(f"{source_dir}/cmake_build"):
+        task.generator.bld.cmd_and_log(f"rm -rf {source_dir}/cmake_build", quiet=0, output=0)
+    task.generator.bld.cmd_and_log(f"mkdir {source_dir}/cmake_build", quiet=0, output=0)
+    # SRT cmake flags
+    flags = " ".join([
+        "-DENABLE_SHARED=OFF",
+        "-DENABLE_STATIC=ON",
+        "-DENABLE_APPS=OFF",
+        "-DENABLE_ENCRYPTION=OFF",
+        "-DENABLE_BONDING=ON",
+    ])
+    try:
+        task.generator.bld.cmd_and_log(f"cmake {flags} -S {source_dir} -B {source_dir}/cmake_build", quiet=0, output=0)
+        task.generator.bld.cmd_and_log(f"cmake --build {source_dir}/cmake_build", quiet=0, output=0)
+        task.generator.bld.cmd_and_log(f"cmake --install {source_dir}/cmake_build --prefix {output}", quiet=0, output=0)
+    except Errors.WafError as e:
+        Logs.error(e.stderr)
+        return -1
+    Logs.info(f"Installed srt lib to {output}")
+
+    task.outputs[0].write("ok")
