@@ -23,7 +23,7 @@ def build(bld):
     bld.add_group()
     lib_path = target.find_node("lib")
     include_path = target.find_node("include")
-    bld.read_shlib('srt', paths=[lib_path], export_includes=[include_path])
+    bld.read_stlib('srt', paths=[lib_path], export_includes=[include_path])
     
     
     if bld.is_toplevel():
