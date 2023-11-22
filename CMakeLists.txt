@@ -27,26 +27,25 @@ ExternalProject_add(project_srt
  SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
   BINARY_DIR ${STEINWURF_RESOLVE}/srt-source/cmake_build
   INSTALL_DIR ${STEINWURF_RESOLVE}/srt-source/install
-  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/
+  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/ -DENABLED_STATIC=ON -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_BUILD_TYPE=Debug
   BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build
-  CMAKE_CACHE_ARGS -DENABLED_STATIC=ON -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_BUILD_TYPE=Debug
   EXCLUDE_FROM_ALL TRUE
-  STEP_TARGETS build
+  STEP_TARGETS install
   INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install
   
 )
 add_library(srt STATIC IMPORTED GLOBAL)
 set_target_properties(srt PROPERTIES
    IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/lib/libsrt.a
+   
 )
-target_include_directories(srt INTERFACE ${STEINWURF_RESOLVE}/srt-source/install/include)
+
+
 add_dependencies(srt project_srt)
 
 add_library(steinwurf::srt ALIAS srt)
 
 
-# # Include directories
-# target_include_directories(steinwurf::srt INTERFACE ${STEINWURF_RESOLVE}/srt-source/install/include)
 
 # Is top level project?
 if (${PROJECT_NAME} STREQUAL ${STEINWURF_TOP_NAME})
