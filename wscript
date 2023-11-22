@@ -53,6 +53,7 @@ def CMakeBuildTask(task):
             "-DENABLE_APPS=OFF",
             "-DENABLE_ENCRYPTION=OFF",
             "-DENABLE_BONDING=ON",
+            "-DCMAKE_BUILD_TYPE=Debug",
         ])
         try:
             task.generator.bld.cmd_and_log(f"cmake {flags} -S {source_dir} -B {source_dir}/cmake_build", quiet=0, output=0)
