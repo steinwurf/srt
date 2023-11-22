@@ -27,9 +27,9 @@ ExternalProject_add(project_srt
  SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
   BINARY_DIR ${STEINWURF_RESOLVE}/srt-source/cmake_build
   INSTALL_DIR ${STEINWURF_RESOLVE}/srt-source/install
-  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/cmake_build
+  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/
   BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build
-  CMAKE_ARGS -DENABLED_STATIC=ON -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_BUILD_TYPE=Debug
+  CMAKE_CACHE_ARGS -DENABLED_STATIC=ON -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_BUILD_TYPE=Debug
   EXCLUDE_FROM_ALL TRUE
   STEP_TARGETS build
   INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install
@@ -38,7 +38,6 @@ ExternalProject_add(project_srt
 add_library(srt STATIC IMPORTED GLOBAL)
 set_target_properties(srt PROPERTIES
    IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/lib/libsrt.a
-   INTERFACE_INCLUDE_DIRECTORIES ${STEINWURF_RESOLVE}/srt-source/install/include
 )
 target_include_directories(srt INTERFACE ${STEINWURF_RESOLVE}/srt-source/install/include)
 add_dependencies(srt project_srt)
