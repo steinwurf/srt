@@ -7,3 +7,6 @@ install/bin
 install/lib/pkgconfig
 install
 build_current
+.cache
+.waf*
+.lock-waf**
