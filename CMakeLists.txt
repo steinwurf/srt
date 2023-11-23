@@ -34,17 +34,15 @@ endif ()
 
 include(ExternalProject)
 ExternalProject_add(project_srt
- SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
+  SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
   BINARY_DIR ${STEINWURF_RESOLVE}/srt-source/cmake_build
   INSTALL_DIR ${STEINWURF_RESOLVE}/srt-source/install
-  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/ -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_BUILD_TYPE=Debug
-  BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build
+  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/ -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF 
+  BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build --config ${CMAKE_BUILD_TYPE}
   EXCLUDE_FROM_ALL TRUE
   STEP_TARGETS build
-  INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install
+  INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install --config --config ${CMAKE_BUILD_TYPE}
   BUILD_BYPRODUCTS ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME}
-  
-  
 )
 add_library(srt STATIC IMPORTED GLOBAL)
 set_target_properties(srt PROPERTIES
