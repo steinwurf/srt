@@ -14,7 +14,17 @@
         "internal": true,
         "method": "semver",
         "major": 5,
-        "sources": ["github.com/steinwurf/gtest.git"]
+        "sources": [
+            "github.com/steinwurf/gtest.git"
+        ]
+    },
+    {
+        "name": "platform",
+        "resolver": "git",
+        "method": "semver",
+        "major": 5,
+        "sources": 
+            ["github.com/steinwurf/platform.git"]
     },
     {
         "name": "srt-source",
