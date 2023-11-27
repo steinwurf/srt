@@ -24,10 +24,10 @@ endif()
 
 
 
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+if (NOT DEFINED CMAKE_BUILD_TYPE)
     set (BUILD_TYPE "Debug")
-else()
-    set (BUILD_TYPE "Release")
+else ()
+    set (BUILD_TYPE ${CMAKE_BUILD_TYPE})
 endif()
 
 if (UNIX AND NOT APPLE)
@@ -67,6 +67,9 @@ set_target_properties(srt PROPERTIES
    IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME}
 
 )
+message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+
+message(STATUS "BUILD TYPE: ${BUILD_TYPE}")
 
 
 add_dependencies(srt project_srt)
