@@ -2,11 +2,10 @@
 #include <cassert>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <platform/config.hpp>
 #include <srt/srt.h>
 #include <srt/udt.h>
 #include <srt/version.h>
-#include <platform/config.hpp>
-
 
 #if defined(PLATFORM_WINDOWS)
 #include <Winsock2.h>
