@@ -9,5 +9,5 @@ install
 build_current
 .cache
 .waf*
-.lock-waf**
+.lock-waf*
 .lock-waf_linux_build
