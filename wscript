@@ -8,7 +8,8 @@ from waflib import Build, Errors, Logs
 APPNAME = "srt"
 VERSION = "1.1.0"
 
-
+def configure(conf):
+    conf.set_cxx_std(17)
 
 
 
@@ -44,8 +45,8 @@ def CMakeBuildTask(task):
         os.makedirs(output.abspath())
         #check if cmake_build folder exists
         if os.path.isdir(f"{source_dir}/cmake_build"):
-            task.generator.bld.cmd_and_log(f"rm -rf {source_dir}/cmake_build", quiet=0, output=0)
-        task.generator.bld.cmd_and_log(f"mkdir {source_dir}/cmake_build", quiet=0, output=0)
+            shutil.rmtree(f"{source_dir}/cmake_build")
+        os.makedirs (f"{source_dir}/cmake_build")
         # SRT cmake flags
         flags = " ".join([
             "-DENABLE_SHARED=ON",
