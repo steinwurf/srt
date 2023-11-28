@@ -24,10 +24,18 @@ endif()
 
 
 
-if (NOT DEFINED CMAKE_BUILD_TYPE)
-    set (BUILD_TYPE "Debug")
+if (NOT CMAKE_BUILD_TYPE)
+    message(STATUS "CMAKE_BUILD_TYPE not defined, using Debug")
+    set (CMAKE_BUILD_TYPE "Debug")
+    set (SRT_ENABLE_DEBUG ON)
 else ()
+    message(STATUS "CMAKE_BUILD_TYPE is defined, using ${CMAKE_BUILD_TYPE}")
     set (BUILD_TYPE ${CMAKE_BUILD_TYPE})
+    if (CMAKE_BUILD_TYPE MATCHES "Debug")
+        set (SRT_ENABLE_DEBUG ON)
+    else ()
+        set (SRT_ENABLE_DEBUG OFF)
+    endif ()
 endif()
 
 if (UNIX AND NOT APPLE)
@@ -38,13 +46,6 @@ elseif (APPLE)
     set(LIB_NAME "libsrt.a")
 elseif (WIN32)
     # Windows-specific code
-    if (CMAKE_C_COMPILER_ID MATCHES "MSVC")
-        # For Windows: Prevent overriding the parent project's compiler/linker
-        # settings
-        set(gtest_force_shared_crt
-                ON
-                CACHE BOOL "" FORCE)
-    endif ()
     set(LIB_NAME "srt_static.lib")
 endif ()
 
@@ -54,11 +55,11 @@ ExternalProject_add(project_srt
   SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
   BINARY_DIR ${STEINWURF_RESOLVE}/srt-source/cmake_build
   INSTALL_DIR ${STEINWURF_RESOLVE}/srt-source/install
-  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/ -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DENABLE_SHARED=ON -DENABLE_STATIC=ON -DCMAKE_BUILD_TYPE=${BUILD_TYPE}
-  BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build --config ${BUILD_TYPE}
+  CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/ -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DENABLE_SHARED=ON -DENABLE_STATIC=ON -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DENABLE_DEBUG=${SRT_ENABLE_DEBUG}
+  BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build --config ${CMAKE_BUILD_TYPE}
   EXCLUDE_FROM_ALL TRUE
   STEP_TARGETS build
-  INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install --config ${BUILD_TYPE}
+  INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install --config ${CMAKE_BUILD_TYPE}
   BUILD_BYPRODUCTS ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME}
   CMAKE_ARGS -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
 )
@@ -69,7 +70,6 @@ set_target_properties(srt PROPERTIES
 )
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 
-message(STATUS "BUILD TYPE: ${BUILD_TYPE}")
 
 
 add_dependencies(srt project_srt)
