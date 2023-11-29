@@ -60,8 +60,7 @@ ExternalProject_add(project_srt
   EXCLUDE_FROM_ALL TRUE
   STEP_TARGETS build
   INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install --config ${CMAKE_BUILD_TYPE}
-  BUILD_BYPRODUCTS ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME} ${STEINWURF_RESOLVE}/srt-source/install/include
-  CMAKE_ARGS -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+  BUILD_BYPRODUCTS ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME} 
 )
 
 
@@ -69,20 +68,20 @@ ExternalProject_add(project_srt
 
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 add_library(srt STATIC IMPORTED GLOBAL)
+add_dependencies(srt project_srt)
+add_library(steinwurf::srt ALIAS srt)
 
 # Make the include directory before we set the target properties otherwise cmake will complain
 # as this is resovled at configure time rather than build time where the header files are generated
-ExternalProject_Get_Property(project_srt install_dir)
-file(MAKE_DIRECTORY ${install_dir}/include)
-set(SRT_GENERATED_INCLUDE_DIR ${install_dir}/include)
+file(MAKE_DIRECTORY ${STEINWURF_RESOLVE}/srt-source/install/include)
+set(SRT_GENERATED_INCLUDE_DIR ${STEINWURF_RESOLVE}/srt-source/install/include)
 set_target_properties(srt PROPERTIES
-   IMPORTED_LOCATION ${install_dir}/lib/${LIB_NAME}
+   IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME}
    INTERFACE_INCLUDE_DIRECTORIES ${SRT_GENERATED_INCLUDE_DIR}
 )
 
 target_include_directories(srt INTERFACE ${SRT_GENERATED_INCLUDE_DIR})
 
-add_library(steinwurf::srt ALIAS srt)
 
 
 
@@ -114,7 +113,7 @@ if (${PROJECT_NAME} STREQUAL ${STEINWURF_TOP_NAME})
 
     # Build test executable
     add_executable(srt_tests ${srt_test_sources})
-    add_dependencies(srt_tests project_srt)
+    add_dependencies(srt_tests steinwurf::srt)
     target_link_libraries(srt_tests steinwurf::srt)
     target_link_libraries(srt_tests gtest_main)
     target_link_libraries(srt_tests steinwurf::platform)
