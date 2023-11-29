@@ -67,6 +67,7 @@ ExternalProject_add(project_srt
 
 
 
+message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 add_library(srt STATIC IMPORTED GLOBAL)
 
 # Make the include directory before we set the target properties otherwise cmake will complain
@@ -79,7 +80,8 @@ set_target_properties(srt PROPERTIES
    INTERFACE_INCLUDE_DIRECTORIES ${SRT_GENERATED_INCLUDE_DIR}
 )
 
-message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+target_include_directories(srt INTERFACE ${SRT_GENERATED_INCLUDE_DIR})
+
 add_library(steinwurf::srt ALIAS srt)
 
 
