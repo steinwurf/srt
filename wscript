@@ -9,13 +9,15 @@ from waflib import Build, Errors, Logs
 APPNAME = "srt"
 VERSION = "1.1.0"
 
-CMAKE_BUILD_TYPE = "Debug"
+CMAKE_BUILD_TYPE = "Release"
+SRT_ENABLE_DEBUG = "OFF"
 lib_name = None
 
 
 def configure(conf):
     if conf.has_tool_option("cxx_debug"):
         CMAKE_BUILD_TYPE = "Debug"
+        SRT_ENABLE_DEBUG = "ON"
 
 
 def build(bld):
@@ -60,7 +62,7 @@ def build(bld):
             features="cxx test",
             source=bld.path.ant_glob("test/**/*.cpp"),
             target="srt_test",
-            use=[lib_name, "srt_includes", "gtest", "platform_includes"],
+            use=[lib_name, "gtest", "platform_includes"],
         )
 
 
@@ -85,11 +87,12 @@ def CMakeBuildTask(task):
     # SRT cmake flags
     flags = " ".join(
         [
-            "-DENABLE_SHARED=ON",
+            "-DENABLE_SHARED=OFF",
             "-DENABLE_STATIC=ON",
             "-DENABLE_APPS=OFF",
             "-DENABLE_ENCRYPTION=OFF",
             "-DENABLE_BONDING=ON",
+            f"-DENABLE_DEBUG={SRT_ENABLE_DEBUG}",
             f"-DCMAKE_BUILD_TYPE={CMAKE_BUILD_TYPE}",
         ]
     )
