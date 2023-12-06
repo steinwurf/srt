@@ -18,16 +18,16 @@ jobs:
       fail-fast: false
       matrix:
         config:
-        - container: ghcr.io/steinwurf/gcc-12:1.0.0
+        - container: ghcr.io/steinwurf/gcc-12:2.0.0
           cxx_mkspec: --cxx_mkspec=cxx_gxx122_x64
           name: GCC 12
-        - container: ghcr.io/steinwurf/clang-15:1.0.0
+        - container: ghcr.io/steinwurf/clang-15:2.0.0
           name: Clang 15
           cxx_mkspec: --cxx_mkspec=cxx_clang150_x64
-        - container: ghcr.io/steinwurf/clang-15:1.0.0
+        - container: ghcr.io/steinwurf/clang-15:2.0.0
           cxx_mkspec: --cxx_mkspec=cxx_clang15_address_sanitizer_x64
           name: Clang 15 Address Sanitizer
-        - container: ghcr.io/steinwurf/clang-15:1.0.0
+        - container: ghcr.io/steinwurf/clang-15:2.0.0
           cxx_mkspec: --cxx_mkspec=cxx_clang15_thread_sanitizer_x64
           name: Clang 15 Thread Sanitizer
     runs-on:
