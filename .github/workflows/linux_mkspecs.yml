@@ -19,7 +19,7 @@ jobs:
       matrix:
         config:
         - container: ghcr.io/steinwurf/gcc-12:2.1.0
-          cxx_mkspec: --cxx_mkspec=cxx_gxx122_x64
+          cxx_mkspec: --cxx_mkspec=cxx_default
           name: GCC 12
         - container: ghcr.io/steinwurf/clang-15:2.1.0
           name: Clang 15
