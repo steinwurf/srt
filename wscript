@@ -56,16 +56,12 @@ def build(bld):
 
 
 def CMakeBuildTask(task):
-
-    CXX_FLAGS = task.env["CXXFLAGS"]
-    C_FLAGS = " ".join(task.env["CFLAGS"])
     CMAKE_BUILD_TYPE = "Release"
     SRT_ENABLE_DEBUG = "OFF"
     if task.env['stored_options']['cxx_debug']:
         CMAKE_BUILD_TYPE = "Debug"
         SRT_ENABLE_DEBUG = "ON"
-
-
+    
 
     # This is the directory where the external library will be installed the
     # task.outputs[0] is the flag file that will be created once the external
@@ -94,6 +90,10 @@ def CMakeBuildTask(task):
                 flags.append("-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDebug")
         elif CMAKE_BUILD_TYPE == "Release":
             flags.append("-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded")
+        # For 32 bit builds we need to pass -A Win32 for cross compiling with mkspec
+        if task.env['DEST_CPU'] == 'x86':
+            flags.append("-A Win32")
+ 
 
     # SRT cmake flags
     flags += [
