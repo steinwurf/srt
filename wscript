@@ -9,17 +9,6 @@ from waflib import Build, Errors, Logs
 APPNAME = "srt"
 VERSION = "1.1.0"
 
-CMAKE_BUILD_TYPE = "Release"
-SRT_ENABLE_DEBUG = "OFF"
-lib_name = None
-
-
-def configure(conf):
-    if conf.has_tool_option("cxx_debug"):
-        CMAKE_BUILD_TYPE = "Debug"
-        SRT_ENABLE_DEBUG = "ON"
-
-
 def build(bld):
     bld.post_mode = Build.POST_LAZY
 
@@ -67,6 +56,17 @@ def build(bld):
 
 
 def CMakeBuildTask(task):
+
+    CXX_FLAGS = task.env["CXXFLAGS"]
+    C_FLAGS = " ".join(task.env["CFLAGS"])
+    CMAKE_BUILD_TYPE = "Release"
+    SRT_ENABLE_DEBUG = "OFF"
+    if task.env['stored_options']['cxx_debug']:
+        CMAKE_BUILD_TYPE = "Debug"
+        SRT_ENABLE_DEBUG = "ON"
+
+
+
     # This is the directory where the external library will be installed the
     # task.outputs[0] is the flag file that will be created once the external
     # library is installed
@@ -84,18 +84,29 @@ def CMakeBuildTask(task):
     # create the output directory
     os.makedirs(output_dir.abspath())
 
+    flags = []
+    # Our waf mkspec hardcodes the windows runtime to be mutlithreaded static i.e. /MT
+    # so we need to pass this to cmake as well so that it can link properly
+    # See https://cmake.org/cmake/help/latest/prop_tgt/MSVC_RUNTIME_LIBRARY.html
+    if platform.system() == "Windows":
+        flags.append("-DCMAKE_POLICY_DEFAULT_CMP0091:STRING=NEW")
+        if CMAKE_BUILD_TYPE == "Debug":
+                flags.append("-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDebug")
+        elif CMAKE_BUILD_TYPE == "Release":
+            flags.append("-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded")
+
     # SRT cmake flags
-    flags = " ".join(
-        [
-            "-DENABLE_SHARED=OFF",
-            "-DENABLE_STATIC=ON",
-            "-DENABLE_APPS=OFF",
-            "-DENABLE_ENCRYPTION=OFF",
-            "-DENABLE_BONDING=ON",
-            f"-DENABLE_DEBUG={SRT_ENABLE_DEBUG}",
-            f"-DCMAKE_BUILD_TYPE={CMAKE_BUILD_TYPE}",
-        ]
-    )
+    flags += [
+        "-DENABLE_SHARED=OFF",
+        "-DENABLE_STATIC=ON",
+        "-DENABLE_APPS=OFF",
+        "-DENABLE_ENCRYPTION=OFF",
+        "-DENABLE_BONDING=ON",
+        f"-DENABLE_DEBUG={SRT_ENABLE_DEBUG}",
+        f"-DCMAKE_BUILD_TYPE={CMAKE_BUILD_TYPE}",
+    ]
+    flags = " ".join(flags)
+
 
     # Run all commands in the output directory
     cwd = output_dir.abspath()
