@@ -20,4 +20,5 @@ TEST(test_srt, lib) {
   assert(ret == SRT_SUCCESS);
   ret = srt_cleanup();
   assert(ret == SRT_SUCCESS);
+  (void)ret; // suppress warning with nodebug
 }

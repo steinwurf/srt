@@ -6,7 +6,7 @@ every change, see the Git log..
 
 Latest
 ------
-* tbd
+* Major: Both CMake and Waf build systems are now supported on all platforms
 
 1.1.0
 -----
