@@ -7,6 +7,7 @@ every change, see the Git log..
 Latest
 ------
 * Major: Both CMake and Waf build systems are now supported on all platforms
+* Patch: Fixed build path errors
 
 1.1.0
 -----

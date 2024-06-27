@@ -9,6 +9,7 @@ from waflib import Build, Errors, Logs
 APPNAME = "srt"
 VERSION = "1.1.0"
 
+
 def build(bld):
     bld.post_mode = Build.POST_LAZY
 
@@ -25,8 +26,13 @@ def build(bld):
     # Declare the include directory for the external library
     include_dir = install_dir.make_node("include")
 
-    # Declare the lib directory for the external library
-    lib_dir = install_dir.make_node("lib")
+    lib_dir = None
+
+    if install_dir.find_node("lib64"):
+        lib_dir = install_dir.make_node("lib64")
+    else:
+        # Declare the lib directory for the external library
+        lib_dir = install_dir.make_node("lib")
 
     # build the external library through an external process
     bld(
@@ -58,10 +64,9 @@ def build(bld):
 def CMakeBuildTask(task):
     CMAKE_BUILD_TYPE = "Release"
     SRT_ENABLE_DEBUG = "OFF"
-    if task.env['stored_options']['cxx_debug']:
+    if task.env["stored_options"]["cxx_debug"]:
         CMAKE_BUILD_TYPE = "Debug"
         SRT_ENABLE_DEBUG = "ON"
-    
 
     # This is the directory where the external library will be installed the
     # task.outputs[0] is the flag file that will be created once the external
@@ -87,13 +92,12 @@ def CMakeBuildTask(task):
     if platform.system() == "Windows":
         flags.append("-DCMAKE_POLICY_DEFAULT_CMP0091:STRING=NEW")
         if CMAKE_BUILD_TYPE == "Debug":
-                flags.append("-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDebug")
+            flags.append("-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDebug")
         elif CMAKE_BUILD_TYPE == "Release":
             flags.append("-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded")
         # For 32 bit builds we need to pass -A Win32 for cross compiling with mkspec
-        if task.env['DEST_CPU'] == 'x86':
+        if task.env["DEST_CPU"] == "x86":
             flags.append("-A Win32")
- 
 
     # SRT cmake flags
     flags += [
@@ -106,7 +110,6 @@ def CMakeBuildTask(task):
         f"-DCMAKE_BUILD_TYPE={CMAKE_BUILD_TYPE}",
     ]
     flags = " ".join(flags)
-
 
     # Run all commands in the output directory
     cwd = output_dir.abspath()
