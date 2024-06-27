@@ -6,6 +6,10 @@ every change, see the Git log..
 
 Latest
 ------
+* tbd
+
+2.0.0
+-----
 * Major: Both CMake and Waf build systems are now supported on all platforms
 * Patch: Fixed build path errors
 
