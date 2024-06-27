@@ -26,6 +26,8 @@ def build(bld):
     # Declare the include directory for the external library
     include_dir = install_dir.make_node("include")
 
+    lib_dir = None
+
     if install_dir.find_node("lib"):
 
         # Declare the lib directory for the external library
