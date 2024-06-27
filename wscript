@@ -28,13 +28,11 @@ def build(bld):
 
     lib_dir = None
 
-    if install_dir.find_node("lib"):
-
+    if install_dir.find_node("lib64"):
+        lib_dir = install_dir.make_node("lib64")
+    else:
         # Declare the lib directory for the external library
         lib_dir = install_dir.make_node("lib")
-
-    elif install_dir.find_node("lib64"):
-        lib_dir = install_dir.make_node("lib64")
 
     # build the external library through an external process
     bld(
