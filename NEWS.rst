@@ -6,6 +6,10 @@ every change, see the Git log..
 
 Latest
 ------
+* tbd
+
+2.2.0
+-----
 * Minor: Fixed lib64 build failures under CMake environments.
 
 2.1.0
