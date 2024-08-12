@@ -50,6 +50,7 @@ elseif (WIN32)
 endif ()
 
 
+include(GNUInstallDirs)
 include(ExternalProject)
 ExternalProject_add(project_srt
   SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
@@ -60,11 +61,8 @@ ExternalProject_add(project_srt
   EXCLUDE_FROM_ALL TRUE
   STEP_TARGETS build
   INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install --config ${CMAKE_BUILD_TYPE}
-  BUILD_BYPRODUCTS ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME} 
+  BUILD_BYPRODUCTS ${STEINWURF_RESOLVE}/srt-source/install/${CMAKE_INSTALL_LIBDIR}/${LIB_NAME}
 )
-
-
-
 
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 add_library(srt STATIC IMPORTED GLOBAL)
@@ -72,11 +70,11 @@ add_dependencies(srt project_srt)
 add_library(steinwurf::srt ALIAS srt)
 
 # Make the include directory before we set the target properties otherwise cmake will complain
-# as this is resovled at configure time rather than build time where the header files are generated
+# as this is resolved at configure time rather than build time where the header files are generated
 file(MAKE_DIRECTORY ${STEINWURF_RESOLVE}/srt-source/install/include)
 set(SRT_GENERATED_INCLUDE_DIR ${STEINWURF_RESOLVE}/srt-source/install/include)
 set_target_properties(srt PROPERTIES
-   IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/lib/${LIB_NAME}
+   IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/${CMAKE_INSTALL_LIBDIR}/${LIB_NAME}
    INTERFACE_INCLUDE_DIRECTORIES ${SRT_GENERATED_INCLUDE_DIR}
 )
 
