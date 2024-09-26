@@ -52,8 +52,8 @@ endif ()
 message(STATUS "CXX_COMPILER: ${CMAKE_CXX_COMPILER}")
 message(STATUS "C_COMPILER: ${CMAKE_C_COMPILER}")
 
-set(CMAKE_C_COMPILER "zig" cc "-target x86_64-linux-musl")
-set(CMAKE_CXX_COMPILER "zig" c++ "-target x86_64-linux-musl")
+set(CMAKE_C_COMPILER "zig cc -target x86_64-linux-musl")
+set(CMAKE_CXX_COMPILER "zig c++ -target x86_64-linux-musl")
 
 include(GNUInstallDirs)
 include(ExternalProject)
