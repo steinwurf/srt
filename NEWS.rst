@@ -6,7 +6,7 @@ every change, see the Git log..
 
 Latest
 ------
-* tbd
+* Patch: Fix cmake build, such that no artifacts are in resolve_symlinks
 
 2.2.0
 -----
