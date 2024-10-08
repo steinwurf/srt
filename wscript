@@ -7,7 +7,7 @@ import platform
 from waflib import Build, Errors, Logs
 
 APPNAME = "srt"
-VERSION = "2.2.0"
+VERSION = "2.2.1"
 
 
 def build(bld):
