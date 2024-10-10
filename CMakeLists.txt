@@ -56,14 +56,14 @@ include(GNUInstallDirs)
 include(ExternalProject)
 ExternalProject_add(project_srt
   SOURCE_DIR ${STEINWURF_RESOLVE}/srt-source
-  BINARY_DIR ${STEINWURF_RESOLVE}/srt-source/cmake_build
-  INSTALL_DIR ${STEINWURF_RESOLVE}/srt-source/install
+  BINARY_DIR ${CMAKE_BINARY_DIR}/srt-source/cmake_build
+  INSTALL_DIR ${CMAKE_BINARY_DIR}/srt-source/install
   CONFIGURE_COMMAND ${CMAKE_COMMAND} ${STEINWURF_RESOLVE}/srt-source/ ${TOOLCHAIN_OPTION} -DENABLE_BONDING=ON -DENABLE_APPS=OFF -DENABLE_ENCRYPTION=OFF -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DENABLE_SHARED=ON -DENABLE_STATIC=ON -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DENABLE_DEBUG=${SRT_ENABLE_DEBUG}
-  BUILD_COMMAND ${CMAKE_COMMAND} --build ${STEINWURF_RESOLVE}/srt-source/cmake_build --config ${CMAKE_BUILD_TYPE}
+  BUILD_COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}/srt-source/cmake_build --config ${CMAKE_BUILD_TYPE}
   EXCLUDE_FROM_ALL TRUE
   STEP_TARGETS build
-  INSTALL_COMMAND ${CMAKE_COMMAND} --install ${STEINWURF_RESOLVE}/srt-source/cmake_build --prefix ${STEINWURF_RESOLVE}/srt-source/install --config ${CMAKE_BUILD_TYPE}
-  BUILD_BYPRODUCTS ${STEINWURF_RESOLVE}/srt-source/install/${CMAKE_INSTALL_LIBDIR}/${LIB_NAME}
+  INSTALL_COMMAND ${CMAKE_COMMAND} --install ${CMAKE_BINARY_DIR}/srt-source/cmake_build --prefix ${CMAKE_BINARY_DIR}/srt-source/install --config ${CMAKE_BUILD_TYPE}
+  BUILD_BYPRODUCTS ${CMAKE_BINARY_DIR}/srt-source/install/${CMAKE_INSTALL_LIBDIR}/${LIB_NAME}
 )
 
 # message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
@@ -73,10 +73,10 @@ add_library(steinwurf::srt ALIAS srt)
 
 # Make the include directory before we set the target properties otherwise cmake will complain
 # as this is resolved at configure time rather than build time where the header files are generated
-file(MAKE_DIRECTORY ${STEINWURF_RESOLVE}/srt-source/install/include)
-set(SRT_GENERATED_INCLUDE_DIR ${STEINWURF_RESOLVE}/srt-source/install/include)
+file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/srt-source/install/include)
+set(SRT_GENERATED_INCLUDE_DIR ${CMAKE_BINARY_DIR}/srt-source/install/include)
 set_target_properties(srt PROPERTIES
-   IMPORTED_LOCATION ${STEINWURF_RESOLVE}/srt-source/install/${CMAKE_INSTALL_LIBDIR}/${LIB_NAME}
+   IMPORTED_LOCATION ${CMAKE_BINARY_DIR}/srt-source/install/${CMAKE_INSTALL_LIBDIR}/${LIB_NAME}
    INTERFACE_INCLUDE_DIRECTORIES ${SRT_GENERATED_INCLUDE_DIR}
 )
 

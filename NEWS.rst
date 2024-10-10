@@ -6,7 +6,7 @@ every change, see the Git log..
 
 Latest
 ------
-* tbd
+* Patch: Needed another fix for the cmake build
 
 2.2.1
 -----
