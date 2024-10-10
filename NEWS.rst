@@ -6,6 +6,10 @@ every change, see the Git log..
 
 Latest
 ------
+* tbd
+
+2.2.2
+-----
 * Patch: Needed another fix for the cmake build
 
 2.2.1
