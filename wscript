@@ -10,6 +10,10 @@ APPNAME = "srt"
 VERSION = "2.2.2"
 
 
+def configure(ctx):
+    ctx.set_cxx_std(17)
+
+
 def build(bld):
     bld.post_mode = Build.POST_LAZY
 
@@ -74,7 +78,7 @@ def CMakeBuildTask(task):
     # The install dir is passed as a parameter to the task
     install_dir = task.generator.install_dir
 
-    # remove the output directory if it exists
+    # Remove the output directory if it exists
     shutil.rmtree(output_dir.abspath())
 
     # create the output directory
@@ -103,6 +107,7 @@ def CMakeBuildTask(task):
         "-DENABLE_BONDING=ON",
         f"-DENABLE_DEBUG={SRT_ENABLE_DEBUG}",
         f"-DCMAKE_BUILD_TYPE={CMAKE_BUILD_TYPE}",
+        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
     ]
     flags = " ".join(flags)
 
