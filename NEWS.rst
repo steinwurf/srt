@@ -6,6 +6,10 @@ every change, see the Git log..
 
 Latest
 ------
+* tbd
+
+2.2.3
+-----
 * Patch: Add -DCMAKE_POLICY_VERSION_MINIMUM=3.5 to the CMake build to support
   CMake 4.0 and up.
 

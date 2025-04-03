@@ -7,7 +7,7 @@ import platform
 from waflib import Build, Errors, Logs
 
 APPNAME = "srt"
-VERSION = "2.2.2"
+VERSION = "2.2.3"
 
 
 def configure(ctx):
